@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('DeployEB') {
             steps {
-                withAWS(credentials: 'credenciales-aws', region: 'eu-west-1') {
+                withAWS(credentials: 'aws-credentials', region: 'eu-west-1') {
                     dir('eb'){
                         sh 'eb deploy'
                     }
